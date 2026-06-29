@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      font-family:Arial;
+      background:#e6f2ff;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box{
+      background:white;
+      padding:20px;
+      border-radius:10px;
+      box-shadow:0 0 10px gray;
+      text-align: center;
+      width:300px;
+    }
+    input{
+      width:90%;
+      padding:10px;
+      margin:10px 0;
+      font-size:16px;
+    }
+    button{
+      padding:10px 20px;
+      background:blue;
+      color:white;
+      border:none;
+      cursor:pointer;
+      border-radius:5px;
+    }
+    button:hover{
+      background:darkblue;
+    }
+    #result{
+      margin-top:15px;
+      font-size:18px;
+      color:green;
+    }
+  </style>
+
+  <div class="box">
+    <h2>Factorial Finder</h2>
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onclick="findFactorial()">Find Factorial</button>
+    <div id="result"></div>
+  </div>
+  <script>
+    function findFactorial() {
+      let n=parseInt(document.getElementById("num").value);
+      let fact=1;
+      if(isNaN(n)|| n<0){
+        document.getElementById("result").innerHTML="Enter a valid number";
+        return;
+      }
+      for (let i=1;i<=n;i++){
+        fact=fact*i;
+      }
+      document.getElementById("result").innerHTML="Factorial of "+n+" is "+fact;
+    }
+      
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
